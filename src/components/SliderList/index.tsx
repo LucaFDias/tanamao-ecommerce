@@ -15,7 +15,7 @@ export function SliderList(){
         keyExtractor={(item) => item}
         showsHorizontalScrollIndicator={false}
         snapToAlignment={'start'}
-        snapToOffsets={[ ...Array(data.length)].map((x, i) => i * (width*0.8 - 20) + (i-1)*40)}
+        snapToOffsets={[ ...Array(data.length)].map((x, i) => i * (width * 0.8 - 20) + (i-1)*40)}
         scrollEventThrottle={16}
         decelerationRate="fast"
         horizontal
@@ -24,7 +24,7 @@ export function SliderList(){
           style={{
               backgroundColor: item,
               width: width * 0.8,
-              height: width / 2.6,
+              height: width / 2.2,
               marginVertical: 12,
               marginHorizontal: 10,
               borderRadius: 8
