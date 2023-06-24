@@ -13,8 +13,6 @@ import { SliderList } from '../../components/SliderList/index';
 import { ListCategories } from '../../components/ListCategories';
 
 export function Home() {
-
-
   return (
     <SafeAreaView style={styles.Container}>
       <ImageBackground
@@ -23,7 +21,7 @@ export function Home() {
       >
         <View style={styles.HeaderContainer}>
           <Image style={styles.LogoImg} source={require("../../assets/logo.png")} />
-          <InputSearch title="Procurar produtos" />
+          <InputSearch icon="search" title="Procurar produtos" />
           <TouchableOpacity>
             <MaterialIcons name="tune" size={34} />
           </TouchableOpacity>

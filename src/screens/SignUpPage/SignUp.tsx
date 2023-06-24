@@ -1,8 +1,8 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { InputSearch } from '../../components/Input'
-import { MaterialIcons } from '@expo/vector-icons'
-import { BtnLayout } from '../../components/Button'
-import { BtnCredential } from '../../components/ButtonCredential'
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { InputSearch } from '../../components/Input';
+import { MaterialIcons } from '@expo/vector-icons';
+import { BtnLayout } from '../../components/Button';
+import { BtnCredential } from '../../components/ButtonCredential';
 
 
 export function SignUp() {
@@ -59,6 +59,7 @@ export function SignUp() {
           </Text>
         </View>
       </View>
+      
       {/* Button Credentials */}
       <View style={styles.containerCredentials}>
         <BtnCredential icon="facebook" type="PRIMARY" />
@@ -91,8 +92,8 @@ export function SignUp() {
         </TouchableOpacity>
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -145,4 +146,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 6
   }
-})
+});
