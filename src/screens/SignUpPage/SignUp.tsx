@@ -5,7 +5,7 @@ import { BtnLayout } from '../../components/Button'
 import { BtnCredential } from '../../components/ButtonCredential'
 
 
-export function SingUp() {
+export function SignUp() {
   return (
     <SafeAreaView style={styles.container}>
       {/* Header Title */}
@@ -46,13 +46,49 @@ export function SingUp() {
             top: 32,
           }}
         >
-          <Text style={{ fontSize: 14, backgroundColor: "white", paddingHorizontal: 10 }}>Ou cadastre-se com</Text>
+          <Text
+            style={{
+              fontSize: 14,
+              backgroundColor: "white",
+              paddingHorizontal: 10,
+              color: '#3e4958',
+              fontWeight: "500"
+            }}
+          >
+            Ou cadastre-se com
+          </Text>
         </View>
       </View>
       {/* Button Credentials */}
       <View style={styles.containerCredentials}>
-        <BtnCredential icon="facebook" type='PRIMARY' />
+        <BtnCredential icon="facebook" type="PRIMARY" />
         <BtnCredential icon="email" />
+      </View>
+
+      {/* SignIn */}
+      <View style={styles.btnSignIn}>
+        <Text
+          style={{
+            color: "#3E4958",
+            fontSize: 14,
+            fontWeight: "400",
+            textAlign: "center",
+          }}
+        >
+          Já possui cadastro?
+        </Text>
+        <TouchableOpacity>
+          <Text
+            style={{
+              color: "#3E4958",
+              fontSize: 14,
+              fontWeight: "600",
+              textAlign: "center",
+            }}
+          >
+            Clique aqui
+          </Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   )
@@ -63,7 +99,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ffffff",
     justifyContent: "space-evenly",
-
   },
   title: {
     fontSize: 26,
@@ -72,23 +107,24 @@ const styles = StyleSheet.create({
   subtitle: {
     color: "#333333",
     fontSize: 16,
+    marginTop: 10
   },
   ContainerTitle: {
     paddingHorizontal: 24,
     paddingVertical: 12,
   },
   formContainer: {
-    marginBottom: 10,
+    marginBottom: 12
   },
   headerContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 24,
+    gap: 24
   },
   containerInput: {
     padding: 24,
     marginTop: 16,
-    gap: 6,
+    gap: 6
   },
   btnContainer: {
     padding: 24,
@@ -100,6 +136,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    gap: 6,
+    gap: 6
   },
+  btnSignIn: {
+    padding: 24,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 6
+  }
 })
