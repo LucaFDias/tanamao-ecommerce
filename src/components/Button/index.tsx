@@ -1,11 +1,12 @@
 import { 
-  Button, Text, TouchableOpacity, StyleSheet, View
+  Text, 
+  TouchableOpacity, 
+  StyleSheet
 } from "react-native";
 import { TouchableOpacityProps } from "react-native";
-import { MaterialIcons } from '@expo/vector-icons'
 
 
-export type BtnIconTypeStylesProps = 'PRIMARY' |'SECONDARY'
+export type BtnIconTypeStylesProps = 'PRIMARY' |'SECONDARY';
 
 type Props = TouchableOpacityProps & {
   title: string;
@@ -18,7 +19,7 @@ export function BtnLayout({title, ...rest}: Props) {
     <TouchableOpacity style={styles.Container} {...rest}>
       <Text style={styles.BtnTitle}>{title}</Text>
     </TouchableOpacity>
-  )
+  );
 };
 
 const styles = StyleSheet.create({
@@ -34,6 +35,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     color: "#FFFFFF",
-
   },
-})
+});

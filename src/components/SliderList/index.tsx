@@ -1,12 +1,15 @@
-import { FlatList, View, StyleSheet, Text, Dimensions } from "react-native"
+import { 
+  FlatList, 
+  View, 
+  StyleSheet, 
+  Text, 
+  Dimensions 
+} from "react-native";
 
-export function SliderList(){
-
-  
+export function SliderList(){  
   const data = ["#ff0000", "#000000", "#50a000", "#960aaf", "#FFFf00", "#999999"];
 
   const { width} = Dimensions.get('window');
-
 
   return(
     <View>
@@ -36,13 +39,12 @@ export function SliderList(){
         )}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   Container: {
 
   }
-  
 
-})
+});

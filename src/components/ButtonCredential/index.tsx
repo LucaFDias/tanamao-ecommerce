@@ -29,7 +29,7 @@ export function BtnCredential({ icon, type,...rest }: Props) {
         <MaterialIcons name={icon} size={40} color="#ffffff" />
       </TouchableOpacity>
     </View>
-  )
+  );
 };
 
 const styles = StyleSheet.create({

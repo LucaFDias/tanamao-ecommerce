@@ -14,8 +14,6 @@ type Props = {
   type?: BtnTypeStyleProps
 };
 
-
-
 export function InputSearch({title, icon}: Props) {
   return (
     <View style={styles.Container}>

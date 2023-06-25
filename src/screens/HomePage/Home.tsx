@@ -26,7 +26,7 @@ export function Home() {
             <MaterialIcons name="tune" size={34} />
           </TouchableOpacity>
         </View>
-        <View>
+        <View style={{top: 120, padding: 24}}>
           <Text>Loja TáNaMão</Text>
           <Text>FASHIO</Text>
           <Text>FASHIO</Text>

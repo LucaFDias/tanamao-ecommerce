@@ -1,9 +1,14 @@
-import { FlatList, View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { 
+  FlatList, 
+  View, 
+  Text, 
+  TouchableOpacity, 
+  StyleSheet 
+} from "react-native";
 
 export function ListCategories() {
   
-  const data = ['Notebooks', 'Computadores', 'Monitores', 'Celulares']
-  
+  const data = ['Notebooks', 'Computadores', 'Monitores', 'Celulares'];
   
   return (
     <View style={styles.Container}>
@@ -46,4 +51,4 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
   },
-})
+});
