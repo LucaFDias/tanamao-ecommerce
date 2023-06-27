@@ -1,76 +1,94 @@
 import { Home } from '../screens/HomePage/Home';
 import { SignIn } from '../screens/SignInPage/SignIn';
+import { Cart } from '../screens/CartPage/Cart';
 import { SignUp } from '../screens/SignUpPage/SignUp';
 import { Profile } from '../screens/ProfilePage/Profile';
 import { AllProducts } from '../screens/ProductsPage/Products';
-import { RecoveryCode } from '../screens/RecoveryCodePage/RecoveryCode';
-import { ForgotPassword } from '../screens/ForgotPasswordPage/ForgotPassword';
+import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {
+  MaterialIcons,
+  Feather,
+  AntDesign,
+  FontAwesome,
+} from "@expo/vector-icons";
+import { Category } from '../screens/CategoryPage/Category';
+import { Favorites } from '../screens/FavoritesPages/Favorites';
 
-import { StyleSheet } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+type AppRoutes = {
+  home: undefined;
+  category: undefined;
+  favorites: undefined;
+  shopping: undefined;
+  more: undefined;
+};
+
+export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>
 
 
-const { Navigator, Screen } = createNativeStackNavigator();
-
-const Tab = createBottomTabNavigator();
+const {Navigator, Screen} = createBottomTabNavigator<AppRoutes>();
 
 export function AppRoutes() {
   return (
-    <Tab.Navigator
+    <Navigator
       screenOptions={{
         headerShown: false,
+        tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "#121212",
-          borderColor: "transparent",
-          paddingBottom: 5,
-          paddingTop: 5 
+          backgroundColor: "#ffffff",
+          borderColor: "white",
+          paddingHorizontal: 12,
         },
-        tabBarActiveTintColor: "#fff",
-        tabBarInactiveTintColor: "red",
+        tabBarActiveTintColor: "#222cb8",
+        tabBarInactiveTintColor: "#999999",
       }}
       initialRouteName="home"
     >
-      <Tab.Screen 
-        name="home" 
-        component={Home} 
+      <Screen
+        name="home"
+        component={Home}
         options={{
           tabBarIcon: ({ color, size }) => (
-          <MaterialIcons name="home" color={color} size={size} />),
-        }}  
-      />
-      <Tab.Screen name="produtos" component={AllProducts}
-      options={{
-        tabBarIcon: ({ color, size }) => (
-        <MaterialIcons name="shopping-cart" color={color} size={size} />),
-      }} />
-      <Tab.Screen name="login" component={SignIn} 
-      options={{
-        tabBarIcon: ({ color, size }) => (
-        <MaterialIcons name="account-circle" color={color} size={size} />),
-      }}/>
-      <Tab.Screen name="cadastro" component={SignUp} 
-        options={{
-          tabBarIcon: ({ color, size }) => (
-          <MaterialIcons name="account-circle" color={color} size={size} />),
+            <AntDesign name="home" color={color} size={size} />
+          ),
         }}
       />
-      <Tab.Screen name="Perfil" component={Profile} 
+      <Screen
+        name="category"
+        component={Category}
         options={{
           tabBarIcon: ({ color, size }) => (
-          <MaterialIcons name="account-circle" color={color} size={size} />),
+            <FontAwesome name="list-alt" color={color} size={size} />
+          ),
         }}
       />
-    </Tab.Navigator>
+      <Screen
+        name="shopping"
+        component={Cart}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Feather name="shopping-bag" color={color} size={size} />
+          ),
+        }}
+      />
+      <Screen
+        name="favorites"
+        component={Favorites}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <AntDesign name="hearto" color={color} size={size} />
+          ),
+        }}
+      />
+      <Screen
+        name="more"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="menu" color={color} size={size} />
+          ),
+        }}
+      />
+    </Navigator>
   )
 };
-
-const styles = StyleSheet.create({
-  tabarContainer: {
-    headerShown: false,
-    backgroundColor: '#121232',
-    borderColor: 'transparent',
-  },
-})

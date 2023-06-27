@@ -5,19 +5,39 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { InputSearch } from "../../components/Input";
 import { MaterialIcons } from "@expo/vector-icons";
+
 import { BtnLayout } from "../../components/Button";
+import { InputSearch } from "../../components/Input";
 import { BtnCredential } from "../../components/ButtonCredential";
 
+// Routes Authentication
+import { useNavigation } from "@react-navigation/native";
+import { AuthNavigatorRoutesProps } from "../../routes/auth.route";
 
 export function SignIn() {
+
+  const navigation = useNavigation<AuthNavigatorRoutesProps>();
+
+  function handleNewAccount() {
+    navigation.navigate("signUp");
+  }
+  
+  function handleForgotPassword() {
+    navigation.navigate("forgot");
+  }
+
+  function handleGoBack() {
+    navigation.goBack()
+  }
+
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Header Title */}
       <View style={styles.ContainerTitle}>
         <View style={styles.headerContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleGoBack}>
             <MaterialIcons name="west" size={30} />
           </TouchableOpacity>
           <Text style={styles.title}>Acessar conta</Text>
@@ -41,15 +61,15 @@ export function SignIn() {
 
       {/* forgot passowrd */}
       <View style={styles.forgotPass}>
-        <TouchableOpacity>
-          <Text>Esqueceu sua senha?</Text>
-        </TouchableOpacity>
+        <Text>Esqueceu sua senha?</Text>
+        <TouchableOpacity onPress={handleForgotPassword}>
           <Text>Clique aqui</Text>
+        </TouchableOpacity>
       </View>
 
       {/* Button  */}
       <View style={styles.btnContainer}>
-        <BtnLayout title="Criar" />
+        <BtnLayout title="Acessar conta" />
         <View
           style={{
             position: "relative",
@@ -79,7 +99,7 @@ export function SignIn() {
       {/* SignIn */}
       <View style={styles.btnSignIn}>
         <Text>Não possui cadastro?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleNewAccount}>
           <Text>Clique aqui</Text>
         </TouchableOpacity>
       </View>

@@ -40,19 +40,20 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
 
     borderWidth: 1,
-    borderRadius: 14,
+    borderRadius: 6,
     backgroundColor: "#F7F8F9",
     borderColor: "#D5dde0",
 
-    minHeight: 54,
-    maxHeight: 54,
+    minHeight: 40,
+    maxHeight: 40,
     alignItems: "center",
     flexDirection: "row",
+    width: '100%',
   },
   Input: {
-    width: "100%",
+    width: "80%",
     fontSize: 16,
-    padding: 16,
+    paddingHorizontal: 10,
     alignItems: "center",
   },
 });

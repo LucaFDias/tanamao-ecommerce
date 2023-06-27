@@ -1,10 +1,10 @@
-import { View, StyleSheet, Text } from "react-native"
+import { View, StyleSheet, Text, SafeAreaView } from "react-native"
 
-export function AllProducts() {
+export function Category() {
   return (
-    <View>
-      <Text>AllProcuts</Text>
-    </View>
+    <SafeAreaView>
+      <Text>Category</Text>
+    </SafeAreaView>
   )
 }
 

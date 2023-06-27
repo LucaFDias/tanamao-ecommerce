@@ -33,7 +33,7 @@ export function ListCategories() {
 const styles = StyleSheet.create({
   Container: {
     height: 100,
-    backgroundColor: "white",
+    padding: 24,
     gap: 24,
   },
   BtnContainer: {

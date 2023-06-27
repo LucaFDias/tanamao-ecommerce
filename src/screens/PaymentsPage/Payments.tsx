@@ -1,9 +1,9 @@
 import { View, StyleSheet, Text } from "react-native"
 
-export function AllProducts() {
+export function Payments() {
   return (
     <View>
-      <Text>AllProcuts</Text>
+      <Text>Payments</Text>
     </View>
   )
 }

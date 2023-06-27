@@ -7,11 +7,11 @@ import {
   View,
 } from "react-native"
 
-import { MaterialIcons } from "@expo/vector-icons"
-
-
+import { MaterialIcons } from "@expo/vector-icons";
 
 export function ForgotPassword() {
+  
+  
   
   return (
     <SafeAreaView style={styles.container}>

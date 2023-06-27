@@ -5,16 +5,27 @@ import { BtnLayout } from '../../components/Button';
 import { BtnCredential } from '../../components/ButtonCredential';
 
 
+//route authentication
+import { useNavigation } from '@react-navigation/native';
+
 export function SignUp() {
+
+
+  const navigation = useNavigation()
+
+  function handleGoBack() {
+    navigation.goBack();
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Header Title */}
       <View style={styles.ContainerTitle}>
         <View style={styles.headerContainer}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleGoBack}>
             <MaterialIcons name="west" size={30} />
           </TouchableOpacity>
-          <Text style={styles.title}>Crie sua conta!</Text>
+          <Text style={styles.title}>Crie sua conta</Text>
         </View>
         <Text style={styles.subtitle}>Vamos criar sua conta</Text>
       </View>
@@ -37,7 +48,7 @@ export function SignUp() {
 
       {/* Button  */}
       <View style={styles.btnContainer}>
-        <BtnLayout title="Criar" />
+        <BtnLayout title="Criar conta" />
         <View
           style={{
             position: "relative",
@@ -51,15 +62,15 @@ export function SignUp() {
               fontSize: 14,
               backgroundColor: "white",
               paddingHorizontal: 10,
-              color: '#3e4958',
-              fontWeight: "500"
+              color: "#3e4958",
+              fontWeight: "500",
             }}
           >
             Ou cadastre-se com
           </Text>
         </View>
       </View>
-      
+
       {/* Button Credentials */}
       <View style={styles.containerCredentials}>
         <BtnCredential icon="facebook" type="PRIMARY" />
@@ -92,7 +103,7 @@ export function SignUp() {
         </TouchableOpacity>
       </View>
     </SafeAreaView>
-  );
+  )
 };
 
 const styles = StyleSheet.create({
